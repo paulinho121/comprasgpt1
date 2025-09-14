@@ -18,7 +18,7 @@ export default function Dashboard() {
   useEffect(() => { fetchResumo(); }, []);
 
   async function fetchResumo() {
-    const { data, error } = await supabase.from("produtos").select("disponivel, nivel_minimo, descricao");
+    const { data, error } = await supabase.from("produtos").select("disponivel, nivel_minimo, descricao, codigo");
     if (error) { console.error(error); return; }
 
     if (data) {
